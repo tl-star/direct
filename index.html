@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khalid | Python Developer Portfolio</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            text-align: center;
+            padding: 3rem 0;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #58a6ff, #f0883e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .tagline {
+            font-size: 1.2rem;
+            color: #8b949e;
+            margin-top: 0.5rem;
+        }
+
+        .header .badge {
+            display: inline-block;
+            background: #21262d;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #f0e6d0;
+            border: 1px solid #30363d;
+            margin-top: 0.8rem;
+        }
+
+        /* ===== CONTACT BAR ===== */
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .contact-bar a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .contact-bar a:hover {
+            color: #f0883e;
+            text-decoration: underline;
+        }
+
+        /* ===== SECTION TITLES ===== */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1.5rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #30363d;
+            color: #f0e6d0;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            list-style: none;
+        }
+
+        .skills-grid li {
+            background: #161b22;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            border: 1px solid #30363d;
+            font-size: 0.9rem;
+            color: #c9d1d9;
+            transition: 0.3s;
+        }
+
+        .skills-grid li:hover {
+            background: #1f2937;
+            border-color: #58a6ff;
+            transform: translateY(-2px);
+        }
+
+        /* ===== PROJECT CARDS ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-card {
+            background: #161b22;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-card h3 {
+            color: #f0e6d0;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: #8b949e;
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-card .tech-tag {
+            display: inline-block;
+            background: #21262d;
+            color: #58a6ff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin: 0.2rem 0.2rem 0 0;
+            border: 1px solid #30363d;
+        }
+
+        /* ===== EXPERIENCE / ABOUT ===== */
+        .about-text {
+            color: #b1bac4;
+            font-size: 1.05rem;
+            max-width: 800px;
+        }
+
+        .highlight-box {
+            background: #161b22;
+            border-left: 4px solid #f0883e;
+            padding: 1.2rem 1.8rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border: 1px solid #30363d;
+            border-left-width: 6px;
+        }
+
+        .highlight-box strong {
+            color: #f0e6d0;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: 2rem 0 0 0;
+            margin-top: 3rem;
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-bar {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <h1>Khalid</h1>
+            <p class="tagline">Python Developer · Automation Expert · IoT &amp; AI Solutions</p>
+            <span class="badge">🚀 5+ Years Experience</span>
+        </header>
+
+        <!-- ===== CONTACT ===== -->
+        <div class="contact-bar">
+            <a href="mailto:your-email@example.com">📧 Email</a>
+            <a href="https://github.com/yourusername" target="_blank">🐙 GitHub</a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank">🔗 LinkedIn</a>
+            <a href="tel:+923152820296">📞 +92 315 2820296</a>
+        </div>
+
+        <!-- ===== ABOUT ===== -->
+        <h2 class="section-title">About Me</h2>
+        <p class="about-text">
+            I am a <strong>Python Developer</strong> with a passion for building 
+            <strong>automation systems, AI pipelines, and IoT solutions</strong>. 
+            From smart home devices to enterprise-grade business software, 
+            I thrive on solving complex problems with clean, scalable code.
+        </p>
+        <div class="highlight-box">
+            <strong>💡 Free Trial Offer:</strong> 
+            I am confident in my skills. I offer a <strong>free sample task</strong> 
+            to demonstrate my expertise before any commitment. 
+            Let me prove my value to your team.
+        </div>
+
+        <!-- ===== SKILLS ===== -->
+        <h2 class="section-title">Core Skills</h2>
+        <ul class="skills-grid">
+            <li>Python (Django / Flask)</li>
+            <li>IoT (Raspberry Pi / Arduino)</li>
+            <li>AI / ML (TensorFlow, PyTorch)</li>
+            <li>OpenCV / LPR Systems</li>
+            <li>REST APIs &amp; Microservices</li>
+            <li>Android / iOS Apps</li>
+            <li>WhatsApp / Telegram Bots</li>
+            <li>Web Scraping &amp; Automation</li>
+            <li>Git &amp; Collaborative Workflows</li>
+            <li>Docker &amp; Deployment</li>
+            <li>POS / Biometric / Payroll</li>
+            <li>PDF Processing Pipelines</li>
+        </ul>
+
+        <!-- ===== PROJECTS ===== -->
+        <h2 class="section-title">Key Projects</h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <h3>🚗 LPR Automated Parking</h3>
+                <p>
+                    License Plate Recognition system using Python &amp; OpenCV. 
+                    Automatically opens barriers and logs vehicle entries/exits.
+                </p>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">OpenCV</span>
+                <span class="tech-tag">IoT</span>
+            </div>
+
+            <div class="project-card">
+                <h3>🏠 Smart Home IoT Suite</h3>
+                <p>
+                    Full home automation with Raspberry Pi, NodeMCU, and sensors. 
+                    Remote control, real-time monitoring, and alerts.
+                </p>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Raspberry Pi</span>
+                <span class="tech-tag">MQTT</span>
+            </div>
+
+            <div class="project-card">
+                <h3>📊 Business Software Suite</h3>
+                <p>
+                    Complete ERP-style system: POS, Biometric Attendance, 
+                    Payroll, Inventory, and WhatsApp integration.
+                </p>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Django</span>
+                <span class="tech-tag">PostgreSQL</span>
+            </div>
+
+            <div class="project-card">
+                <h3>🤖 WhatsApp / Telegram Bots</h3>
+                <p>
+                    Automated bots for business communication, order processing, 
+                    and notifications with custom workflows.
+                </p>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">API</span>
+                <span class="tech-tag">Automation</span>
+            </div>
+
+            <div class="project-card">
+                <h3>📄 PDF to Excel Automation</h3>
+                <p>
+                    High-performance pipeline to extract data from PDFs and 
+                    export to structured Excel/CSV files with 99% accuracy.
+                </p>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">PDF</span>
+                <span class="tech-tag">Data Pipeline</span>
+            </div>
+
+            <div class="project-card">
+                <h3>📱 Cross-Platform Walkie-Talkie</h3>
+                <p>
+                    Real-time communication app for Android and iOS using 
+                    WebRTC and Python backend.
+                </p>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">WebRTC</span>
+                <span class="tech-tag">Android/iOS</span>
+            </div>
+
+        </div>
+
+        <!-- ===== EXPERIENCE HIGHLIGHT ===== -->
+        <h2 class="section-title">Why Me?</h2>
+        <div class="highlight-box" style="border-left-color: #58a6ff;">
+            <strong>✅ Full-Stack Problem Solver</strong><br />
+            I don't just write code — I build <strong>complete solutions</strong>. 
+            Whether it's hardware integration, AI pipelines, or business software, 
+            I deliver results that work in the real world.
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <p>
+                📂 View my full portfolio on 
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a> &bull; 
+                📧 <a href="mailto:your-email@example.com">your-email@example.com</a>
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+                &copy; 2026 Khalid &bull; Built with ❤️
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
