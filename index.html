@@ -28,7 +28,7 @@
         }
 
         /* ====================================================
-           LANGUAGE POPUP (OVERLAY)
+           LANGUAGE POPUP (OVERLAY) - Always visible on load
         ==================================================== */
         .lang-overlay {
             position: fixed;
@@ -470,9 +470,9 @@
 <body>
 
     <!-- ====================================================
-    LANGUAGE SELECTION POPUP
+    LANGUAGE SELECTION POPUP (ALWAYS VISIBLE ON LOAD)
     ==================================================== -->
-    <div class="lang-overlay" id="langPopup">
+    <div class="lang-overlay" id="langPopup" style="display: flex !important;">
         <div class="lang-popup">
             <button class="close-btn" id="closeLangPopup" title="Close & use English">✕</button>
             <h2 id="popupTitle">🌍 Select Your Language</h2>
@@ -935,7 +935,6 @@
             const t = translations[lang];
             if (!t) return;
 
-            // Update all elements with IDs
             document.getElementById('popupTitle').textContent = t.popupTitle;
             document.getElementById('popupSubtitle').textContent = t.popupSubtitle;
             document.getElementById('name').textContent = t.name;
@@ -959,7 +958,6 @@
             document.getElementById('instantText').innerHTML = t.instantText;
             document.getElementById('skillsTitle').textContent = t.skillsTitle;
 
-            // Skills list
             const skillsList = document.getElementById('skillsList');
             skillsList.innerHTML = '';
             t.skills.forEach(skill => {
@@ -988,29 +986,22 @@
             document.getElementById('footerBadge').textContent = t.footerBadge;
             document.getElementById('footerCopy').textContent = t.footerCopy;
 
-            // Also update the page language attribute
             document.documentElement.lang = lang;
         }
 
         // ============================================================
-        // 3. POPUP LOGIC
+        // 3. POPUP LOGIC - ALWAYS SHOW ON LOAD
         // ============================================================
         const popup = document.getElementById('langPopup');
         const closeBtn = document.getElementById('closeLangPopup');
         const langBtns = document.querySelectorAll('.lang-btn');
 
-        // Check if language already selected
-        const selectedLang = localStorage.getItem('selectedLanguage');
-
-        if (selectedLang && translations[selectedLang]) {
-            popup.style.display = 'none';
-            setLanguage(selectedLang);
-        }
+        // Always show popup on load (remove any stored preference)
+        // We will NOT check localStorage for hiding the popup
 
         // Close popup (X button) - default to English
         closeBtn.addEventListener('click', function() {
             popup.style.display = 'none';
-            localStorage.setItem('selectedLanguage', 'en');
             setLanguage('en');
         });
 
@@ -1018,7 +1009,6 @@
         langBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 const lang = this.getAttribute('data-lang');
-                localStorage.setItem('selectedLanguage', lang);
                 popup.style.display = 'none';
                 setLanguage(lang);
             });
@@ -1033,7 +1023,6 @@
                 const confirmClose = confirm('Close popup and continue with English?');
                 if (confirmClose) {
                     popup.style.display = 'none';
-                    localStorage.setItem('selectedLanguage', 'en');
                     setLanguage('en');
                 }
             }
