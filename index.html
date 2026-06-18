@@ -6,8 +6,8 @@
     <title>Khalid Muhammad | Python Developer Portfolio</title>
     <style>
         /* ====================================================
-                   RESET & BASE
-                ==================================================== */
+           RESET & BASE
+        ==================================================== */
         * {
             margin: 0;
             padding: 0;
@@ -28,8 +28,110 @@
         }
 
         /* ====================================================
-                   HEADER
-                ==================================================== */
+           LANGUAGE POPUP (OVERLAY)
+        ==================================================== */
+        .lang-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .lang-popup {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 20px;
+            padding: 2.5rem 2.8rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .lang-popup .close-btn {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            background: none;
+            border: none;
+            color: #8b949e;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: 0.3s;
+            line-height: 1;
+        }
+
+        .lang-popup .close-btn:hover {
+            color: #f0e6d0;
+            transform: rotate(90deg);
+        }
+
+        .lang-popup h2 {
+            color: #f0e6d0;
+            font-size: 1.6rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .lang-popup p {
+            color: #8b949e;
+            font-size: 0.95rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .lang-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .lang-btn {
+            background: #21262d;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+            padding: 0.7rem 0.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .lang-btn:hover {
+            background: #1f2937;
+            border-color: #58a6ff;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .lang-btn .flag {
+            font-size: 1.4rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* ====================================================
+           HEADER
+        ==================================================== */
         .header {
             text-align: center;
             padding: 3rem 0 2rem 0;
@@ -78,8 +180,8 @@
         }
 
         /* ====================================================
-                   CONTACT BAR (Fully Automated)
-                ==================================================== */
+           CONTACT BAR (Fully Automated)
+        ==================================================== */
         .contact-bar {
             display: flex;
             flex-wrap: wrap;
@@ -108,7 +210,6 @@
             text-decoration: none;
         }
 
-        /* WhatsApp Button */
         .contact-bar .whatsapp-btn {
             background: #25D366;
             color: #ffffff !important;
@@ -126,7 +227,6 @@
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
         }
 
-        /* Call to Action Button */
         .contact-bar .call-btn {
             background: #f0883e;
             color: #0d1117 !important;
@@ -145,8 +245,8 @@
         }
 
         /* ====================================================
-                   SECTION TITLES
-                ==================================================== */
+           SECTION TITLES
+        ==================================================== */
         .section-title {
             font-size: 2rem;
             font-weight: 600;
@@ -158,8 +258,8 @@
         }
 
         /* ====================================================
-                   ABOUT & HIGHLIGHT BOXES
-                ==================================================== */
+           ABOUT & HIGHLIGHT BOXES
+        ==================================================== */
         .about-text {
             color: #b1bac4;
             font-size: 1.08rem;
@@ -205,8 +305,8 @@
         }
 
         /* ====================================================
-                   SKILLS
-                ==================================================== */
+           SKILLS
+        ==================================================== */
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
@@ -233,8 +333,8 @@
         }
 
         /* ====================================================
-                   PROJECT CARDS
-                ==================================================== */
+           PROJECT CARDS
+        ==================================================== */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -281,8 +381,8 @@
         }
 
         /* ====================================================
-                   FOOTER
-                ==================================================== */
+           FOOTER
+        ==================================================== */
         .footer {
             text-align: center;
             padding: 2.5rem 0 0 0;
@@ -315,38 +415,38 @@
         }
 
         /* ====================================================
-                   RESPONSIVE
-                ==================================================== */
+           RESPONSIVE
+        ==================================================== */
         @media (max-width: 650px) {
             .header h1 {
                 font-size: 2.2rem;
             }
-
             .header .tagline {
                 font-size: 1rem;
             }
-
             .projects-grid {
                 grid-template-columns: 1fr;
             }
-
             .contact-bar {
                 flex-direction: column;
                 align-items: stretch;
                 gap: 0.6rem;
             }
-
             .contact-bar a {
                 justify-content: center;
                 padding: 0.6rem 1rem;
             }
-
             .section-title {
                 font-size: 1.6rem;
             }
-
             .highlight-box {
                 padding: 1rem 1.2rem;
+            }
+            .lang-popup {
+                padding: 2rem 1.5rem;
+            }
+            .lang-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -354,20 +454,43 @@
             body {
                 padding: 1rem 0.5rem;
             }
-
             .header h1 {
                 font-size: 1.8rem;
             }
-
             .header .badge-group {
                 flex-direction: column;
                 align-items: center;
+            }
+            .lang-popup h2 {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- ====================================================
+    LANGUAGE SELECTION POPUP
+    ==================================================== -->
+    <div class="lang-overlay" id="langPopup">
+        <div class="lang-popup">
+            <button class="close-btn" id="closeLangPopup" title="Close & use English">✕</button>
+            <h2>🌍 Select Your Language</h2>
+            <p>Choose your preferred language / اپنی زبان منتخب کریں</p>
+            <div class="lang-grid">
+                <button class="lang-btn" data-lang="en"><span class="flag">🇬🇧</span>English</button>
+                <button class="lang-btn" data-lang="ur"><span class="flag">🇵🇰</span>Urdu</button>
+                <button class="lang-btn" data-lang="hi"><span class="flag">🇮🇳</span>Hindi</button>
+                <button class="lang-btn" data-lang="ar"><span class="flag">🇸🇦</span>العربية</button>
+                <button class="lang-btn" data-lang="fr"><span class="flag">🇫🇷</span>Français</button>
+                <button class="lang-btn" data-lang="es"><span class="flag">🇪🇸</span>Español</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================
+    MAIN CONTENT
+    ==================================================== -->
     <div class="container">
 
         <!-- ============================================
@@ -391,12 +514,7 @@
             <a href="https://tl-star.github.io/khalid2/" target="_blank">🐙 GitHub</a>
             <a href="https://linkedin.com/in/khalid-muhammad-5153b8296" target="_blank">🔗 LinkedIn</a>
             <a href="https://maps.google.com/?q=Karachi,Pakistan" target="_blank">📍 Location</a>
-
-            <!-- 🤖 WhatsApp Automation Button -->
-            <a href="https://wa.me/923152820296?text=Hi%20Khalid,%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" class="whatsapp-btn">
-                💬 WhatsApp
-            </a>
-
+            <a href="https://wa.me/923152820296?text=Hi%20Khalid,%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
             <a href="#" class="call-btn">📅 Book a Free Call</a>
         </div>
 
@@ -411,7 +529,6 @@
             I thrive on solving complex problems with clean, scalable code.
         </p>
 
-        <!-- Highlight Boxes -->
         <div class="highlight-box blue">
             <span class="emoji-big">💡</span> <strong>How I Can Help Your Business:</strong><br />
             I build <strong>custom automation systems</strong> that save time, reduce errors,
@@ -554,6 +671,60 @@
         </footer>
 
     </div>
+
+    <!-- ====================================================
+    JAVASCRIPT FOR LANGUAGE POPUP
+    ==================================================== -->
+    <script>
+        // === DOM References ===
+        const popup = document.getElementById('langPopup');
+        const closeBtn = document.getElementById('closeLangPopup');
+        const langBtns = document.querySelectorAll('.lang-btn');
+
+        // === Check if language already selected ===
+        const selectedLang = localStorage.getItem('selectedLanguage');
+
+        if (selectedLang) {
+            // User already selected a language, hide popup
+            popup.style.display = 'none';
+        }
+
+        // === Close popup (X button) ===
+        closeBtn.addEventListener('click', function() {
+            popup.style.display = 'none';
+            // Set default language as English
+            localStorage.setItem('selectedLanguage', 'en');
+            // Optional: Change page content to English (already default)
+        });
+
+        // === Language selection ===
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                localStorage.setItem('selectedLanguage', lang);
+                popup.style.display = 'none';
+
+                // Show a brief confirmation message
+                const langName = this.textContent.trim();
+                alert('✅ Language selected: ' + langName + '\n(Content is being translated on the server side.)');
+            });
+        });
+
+        // === Click outside popup to close (with consent) ===
+        document.addEventListener('click', function(event) {
+            const isClickInside = document.querySelector('.lang-popup').contains(event.target);
+            const isClickOnOverlay = event.target === popup;
+
+            if (isClickOnOverlay && !isClickInside) {
+                // User clicked outside popup
+                const confirmClose = confirm('Close popup and continue with English?');
+                if (confirmClose) {
+                    popup.style.display = 'none';
+                    localStorage.setItem('selectedLanguage', 'en');
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
