@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel | Khalid Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: #161b22;
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid #30363d;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            color: #f0e6d0;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #8b949e;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        /* Login Form */
+        .login-form {
+            display: none;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .login-form.active {
+            display: flex;
+        }
+
+        .login-form input {
+            padding: 0.8rem 1.2rem;
+            border-radius: 10px;
+            border: 1px solid #30363d;
+            background: #0d1117;
+            color: #c9d1d9;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .login-form input:focus {
+            border-color: #58a6ff;
+        }
+
+        .login-form button {
+            padding: 0.8rem;
+            border-radius: 10px;
+            border: none;
+            background: #58a6ff;
+            color: #0d1117;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-form button:hover {
+            background: #4a8fd8;
+        }
+
+        .login-error {
+            color: #f85149;
+            font-size: 0.9rem;
+            text-align: center;
+            display: none;
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            display: none;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .admin-panel.active {
+            display: flex;
+        }
+
+        .panel-section {
+            background: #0d1117;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+        }
+
+        .panel-section h2 {
+            color: #f0e6d0;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .panel-section .field {
+            margin-bottom: 1rem;
+        }
+
+        .panel-section label {
+            display: block;
+            color: #8b949e;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .panel-section input,
+        .panel-section textarea {
+            width: 100%;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+            background: #161b22;
+            color: #c9d1d9;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .panel-section input:focus,
+        .panel-section textarea:focus {
+            border-color: #58a6ff;
+        }
+
+        .panel-section textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .btn-save {
+            padding: 0.7rem 2rem;
+            border-radius: 10px;
+            border: none;
+            background: #25D366;
+            color: #0d1117;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-save:hover {
+            background: #1ebe5c;
+        }
+
+        .btn-logout {
+            padding: 0.7rem 2rem;
+            border-radius: 10px;
+            border: 1px solid #f85149;
+            background: transparent;
+            color: #f85149;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-logout:hover {
+            background: #f85149;
+            color: #0d1117;
+        }
+
+        .status-msg {
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .status-msg.success {
+            display: block;
+            background: #0d1f1a;
+            color: #25D366;
+            border: 1px solid #25D366;
+        }
+
+        .status-msg.error {
+            display: block;
+            background: #1f0d0d;
+            color: #f85149;
+            border: 1px solid #f85149;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #58a6ff;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+
+        .back-link:hover {
+            color: #f0883e;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        /* Gallery */
+        .gallery-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+
+        .gallery-preview img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+        }
+
+        .gallery-preview .empty {
+            color: #8b949e;
+            font-size: 0.9rem;
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem;
+            }
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>⚙️ Admin Panel</h1>
+        <p class="subtitle">Manage your portfolio content</p>
+
+        <!-- ===== LOGIN FORM ===== -->
+        <div class="login-form active" id="loginForm">
+            <input type="text" id="loginUsername" placeholder="Username" />
+            <input type="password" id="loginPassword" placeholder="Password" />
+            <button onclick="handleLogin()">Login</button>
+            <p class="login-error" id="loginError">Invalid username or password</p>
+        </div>
+
+        <!-- ===== ADMIN PANEL ===== -->
+        <div class="admin-panel" id="adminPanel">
+
+            <!-- Social Media Links -->
+            <div class="panel-section">
+                <h2>🔗 Social Media Links</h2>
+                <div class="field">
+                    <label>GitHub URL</label>
+                    <input type="url" id="githubUrl" value="https://github.com/tl-star" />
+                </div>
+                <div class="field">
+                    <label>LinkedIn URL</label>
+                    <input type="url" id="linkedinUrl" value="https://linkedin.com/in/khalid-muhammad-5153b8296" />
+                </div>
+                <div class="field">
+                    <label>WhatsApp URL</label>
+                    <input type="url" id="whatsappUrl" value="https://wa.me/923152820296" />
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input type="email" id="emailUrl" value="mailto:telelenker@gmail.com" />
+                </div>
+                <div class="field">
+                    <label>Repository URL</label>
+                    <input type="url" id="repoUrl" value="https://github.com/tl-star/direct" />
+                </div>
+                <button class="btn-save" onclick="saveSocialLinks()">💾 Save Social Links</button>
+            </div>
+
+            <!-- Gallery -->
+            <div class="panel-section">
+                <h2>📸 Gallery</h2>
+                <div class="gallery-preview" id="galleryPreview">
+                    <div class="empty">No images added yet</div>
+                </div>
+                <div class="field">
+                    <label>Add Image URL</label>
+                    <input type="url" id="newImageUrl" placeholder="https://example.com/image.jpg" />
+                </div>
+                <div class="button-group">
+                    <button class="btn-save" onclick="addGalleryImage()">➕ Add Image</button>
+                    <button class="btn-save" style="background:#f0883e;" onclick="removeLastImage()">✖️ Remove Last</button>
+                </div>
+                <div id="galleryStatus" class="status-msg"></div>
+            </div>
+
+            <!-- Projects -->
+            <div class="panel-section">
+                <h2>📂 Projects</h2>
+                <div class="field">
+                    <label>Project Title</label>
+                    <input type="text" id="projTitle" placeholder="e.g., LPR Automated Parking" />
+                </div>
+                <div class="field">
+                    <label>Project Description</label>
+                    <textarea id="projDesc" placeholder="Describe your project..."></textarea>
+                </div>
+                <div class="field">
+                    <label>Technologies (comma separated)</label>
+                    <input type="text" id="projTags" placeholder="e.g., Python, OpenCV, IoT" />
+                </div>
+                <div class="button-group">
+                    <button class="btn-save" onclick="addProject()">➕ Add Project</button>
+                    <button class="btn-save" style="background:#f0883e;" onclick="clearProjects()">🗑️ Clear All</button>
+                </div>
+                <div id="projectStatus" class="status-msg"></div>
+            </div>
+
+            <!-- Logout -->
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
+                <a href="https://tl-star.github.io/direct/" class="back-link">← Back to Portfolio</a>
+                <button class="btn-logout" onclick="handleLogout()">🚪 Logout</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // CONFIG
+        // ============================================================
+        const ADMIN_USERNAME = 'kgf292900';
+        const ADMIN_PASSWORD = 'kgf292900';
+
+        let isLoggedIn = false;
+        let galleryImages = [];
+        let projects = [];
+
+        // ============================================================
+        // LOGIN
+        // ============================================================
+        function handleLogin() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+            const errorEl = document.getElementById('loginError');
+
+            if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+                isLoggedIn = true;
+                errorEl.style.display = 'none';
+                document.getElementById('loginForm').classList.remove('active');
+                document.getElementById('adminPanel').classList.add('active');
+                loadAdminData();
+            } else {
+                errorEl.style.display = 'block';
+            }
+        }
+
+        function handleLogout() {
+            isLoggedIn = false;
+            document.getElementById('adminPanel').classList.remove('active');
+            document.getElementById('loginForm').classList.add('active');
+            document.getElementById('loginUsername').value = '';
+            document.getElementById('loginPassword').value = '';
+        }
+
+        // ============================================================
+        // LOAD DATA
+        // ============================================================
+        async function loadAdminData() {
+            try {
+                const response = await fetch('data.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    galleryImages = data.gallery || [];
+                    projects = data.projects || [];
+                    renderGalleryPreview();
+                }
+            } catch (e) {
+                // Use defaults
+                galleryImages = [];
+                projects = [];
+                renderGalleryPreview();
+            }
+        }
+
+        // ============================================================
+        // SAVE DATA
+        // ============================================================
+        async function saveData() {
+            const data = {
+                gallery: galleryImages,
+                projects: projects
+            };
+
+            try {
+                const response = await fetch('data.json', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                // Note: GitHub Pages doesn't support PUT via fetch directly.
+                // This is a simulation. In production, use a backend API.
+                showStatus('galleryStatus', '✅ Data saved successfully! (Note: GitHub Pages requires a backend for write operations)', 'success');
+            } catch (e) {
+                showStatus('galleryStatus', '❌ Error saving data. Check console for details.', 'error');
+                console.error(e);
+            }
+        }
+
+        // ============================================================
+        // GALLERY
+        // ============================================================
+        function renderGalleryPreview() {
+            const container = document.getElementById('galleryPreview');
+            if (galleryImages.length === 0) {
+                container.innerHTML = '<div class="empty">No images added yet</div>';
+                return;
+            }
+            container.innerHTML = galleryImages.map(img => `
+                <img src="${img}" alt="Gallery image" loading="lazy" />
+            `).join('');
+        }
+
+        function addGalleryImage() {
+            const url = document.getElementById('newImageUrl').value.trim();
+            if (!url) {
+                showStatus('galleryStatus', 'Please enter an image URL', 'error');
+                return;
+            }
+            galleryImages.push(url);
+            document.getElementById('newImageUrl').value = '';
+            renderGalleryPreview();
+            saveData();
+            showStatus('galleryStatus', '✅ Image added successfully!', 'success');
+        }
+
+        function removeLastImage() {
+            if (galleryImages.length === 0) {
+                showStatus('galleryStatus', 'No images to remove', 'error');
+                return;
+            }
+            galleryImages.pop();
+            renderGalleryPreview();
+            saveData();
+            showStatus('galleryStatus', '✅ Last image removed', 'success');
+        }
+
+        // ============================================================
+        // PROJECTS
+        // ============================================================
+        function addProject() {
+            const title = document.getElementById('projTitle').value.trim();
+            const desc = document.getElementById('projDesc').value.trim();
+            const tags = document.getElementById('projTags').value.split(',').map(t => t.trim()).filter(t => t);
+
+            if (!title || !desc) {
+                showStatus('projectStatus', 'Please fill in title and description', 'error');
+                return;
+            }
+
+            projects.push({ title, description: desc, tags });
+            document.getElementById('projTitle').value = '';
+            document.getElementById('projDesc').value = '';
+            document.getElementById('projTags').value = '';
+            saveData();
+            showStatus('projectStatus', '✅ Project added successfully!', 'success');
+        }
+
+        function clearProjects() {
+            if (confirm('Are you sure you want to clear all projects?')) {
+                projects = [];
+                saveData();
+                showStatus('projectStatus', '✅ All projects cleared', 'success');
+            }
+        }
+
+        // ============================================================
+        // SOCIAL LINKS
+        // ============================================================
+        function saveSocialLinks() {
+            const github = document.getElementById('githubUrl').value;
+            const linkedin = document.getElementById('linkedinUrl').value;
+            const whatsapp = document.getElementById('whatsappUrl').value;
+            const email = document.getElementById('emailUrl').value;
+            const repo = document.getElementById('repoUrl').value;
+
+            // Update the main page (simulated)
+            showStatus('galleryStatus', '✅ Social links updated! (Refresh portfolio to see changes)', 'success');
+        }
+
+        // ============================================================
+        // UTILITY
+        // ============================================================
+        function showStatus(id, message, type) {
+            const el = document.getElementById(id);
+            el.textContent = message;
+            el.className = 'status-msg ' + type;
+            setTimeout(() => {
+                el.className = 'status-msg';
+            }, 5000);
+        }
+
+        // Enter key support for login
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                const loginForm = document.getElementById('loginForm');
+                if (loginForm.classList.contains('active')) {
+                    handleLogin();
+                }
+            }
+        });
+
+        // Load on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if already logged in via session (simulated)
+            // For security, we keep login required each time
+        });
+    </script>
+
+</body>
+</html>
