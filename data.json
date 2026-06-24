@@ -1,12 +1,4 @@
 {
-  "gallery": [
-    "https://via.placeholder.com/400x300/1e2630/58a6ff?text=LPR+Parking",
-    "https://via.placeholder.com/400x300/1e2630/f0883e?text=Smart+Home",
-    "https://via.placeholder.com/400x300/1e2630/25D366?text=Business+Suite",
-    "https://via.placeholder.com/400x300/1e2630/58a6ff?text=WhatsApp+Bot",
-    "https://via.placeholder.com/400x300/1e2630/f0883e?text=Web3+Contracts",
-    "https://via.placeholder.com/400x300/1e2630/25D366?text=Urdu+Chatbot"
-  ],
   "projects": [
     {
       "title": "🚗 LPR Automated Parking",
@@ -30,17 +22,17 @@
     },
     {
       "title": "⛓️ Smart Contracts & Web3",
-      "description": "Decentralized applications using Solidity, Web3.js, and Ethereum. Built secure and transparent smart contracts for real-world use.",
+      "description": "Decentralized applications using Solidity, Web3.js, and Ethereum. Built secure and transparent smart contracts.",
       "tags": ["Solidity", "Web3", "Ethereum"]
     },
     {
       "title": "🧠 Chatbot Training & NLP",
-      "description": "Trained custom AI chatbots using Rasa, Dialogflow, and custom NLP pipelines for business automation and customer support.",
+      "description": "Trained custom AI chatbots using Rasa, Dialogflow, and custom NLP pipelines for business automation.",
       "tags": ["Python", "NLP", "Rasa"]
     },
     {
       "title": "🇵🇰 Urdu Language Chatbot",
-      "description": "Developed a chatbot that understands and responds in Urdu. Built for local businesses and customer support in Pakistan.",
+      "description": "Developed a chatbot that understands and responds in Urdu. Built for local businesses and customer support.",
       "tags": ["Python", "NLP", "Urdu"]
     }
   ]
