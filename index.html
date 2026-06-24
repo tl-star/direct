@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khalid Muhammad | Python Developer</title>
     <style>
-        /* ===== RESET & BASE ===== */
         * {
             margin: 0;
             padding: 0;
@@ -15,6 +14,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #151b22;
+            /* 3% lighter than before (#0d1117 → #151b22) */
             color: #c9d1d9;
             line-height: 1.6;
             padding: 1rem;
@@ -27,7 +27,7 @@
             padding: 0 0.5rem;
         }
 
-        /* ===== TOP BAR ===== */
+        /* ===== TOP BAR: Language Dropdown + Admin ===== */
         .top-bar {
             display: flex;
             justify-content: space-between;
@@ -47,9 +47,11 @@
             color: #f0e6d0;
             text-decoration: none;
         }
+
         .top-bar .left .logo span {
             color: #58a6ff;
         }
+
         .top-bar .right {
             display: flex;
             align-items: center;
@@ -67,6 +69,7 @@
             cursor: pointer;
             outline: none;
         }
+
         .lang-dropdown:hover {
             border-color: #58a6ff;
         }
@@ -81,6 +84,7 @@
             text-decoration: none;
             transition: 0.3s;
         }
+
         .admin-btn:hover {
             border-color: #f0883e;
             color: #f0e6d0;
@@ -101,11 +105,13 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .header .tagline {
             font-size: 1rem;
             color: #8b949e;
             margin-top: 0.2rem;
         }
+
         .header .badge-group {
             margin-top: 0.8rem;
             display: flex;
@@ -113,6 +119,7 @@
             justify-content: center;
             gap: 0.6rem;
         }
+
         .header .badge {
             background: #21262d;
             padding: 0.3rem 1rem;
@@ -120,6 +127,7 @@
             font-size: 0.8rem;
             border: 1px solid #30363d;
         }
+
         .header .badge.available {
             border-color: #f0883e;
             color: #f0883e;
@@ -147,9 +155,11 @@
             transition: 0.3s;
             border: 1px solid #30363d;
         }
+
         .social-bar .btn:hover {
             transform: translateY(-2px);
         }
+
         .social-bar .btn-github {
             background: #1f2937;
             color: #c9d1d9;
@@ -158,6 +168,7 @@
             background: #2d3748;
             border-color: #58a6ff;
         }
+
         .social-bar .btn-linkedin {
             background: #0a66c2;
             color: #fff;
@@ -166,6 +177,7 @@
         .social-bar .btn-linkedin:hover {
             background: #005582;
         }
+
         .social-bar .btn-whatsapp {
             background: #25D366;
             color: #fff;
@@ -174,6 +186,7 @@
         .social-bar .btn-whatsapp:hover {
             background: #1ebe5c;
         }
+
         .social-bar .btn-email {
             background: #d14836;
             color: #fff;
@@ -182,6 +195,7 @@
         .social-bar .btn-email:hover {
             background: #b03a2a;
         }
+
         .social-bar .btn-repo {
             background: #21262d;
             color: #c9d1d9;
@@ -190,226 +204,6 @@
         .social-bar .btn-repo:hover {
             border-color: #f0883e;
             color: #f0e6d0;
-        }
-
-        /* ===== SMART CHATBOT SECTION ===== */
-        .chatbot-section {
-            background: #1e2630;
-            border-radius: 16px;
-            border: 1px solid #30363d;
-            padding: 1.8rem;
-            margin: 1.8rem 0;
-        }
-
-        .chatbot-section h2 {
-            color: #f0e6d0;
-            font-size: 1.5rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .chatbot-section .subtitle {
-            color: #8b949e;
-            font-size: 0.95rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .chatbot-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .chatbot-container textarea {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border-radius: 12px;
-            border: 1px solid #30363d;
-            background: #0d1117;
-            color: #c9d1d9;
-            font-size: 0.95rem;
-            min-height: 100px;
-            resize: vertical;
-            outline: none;
-            transition: 0.3s;
-            font-family: inherit;
-        }
-
-        .chatbot-container textarea:focus {
-            border-color: #58a6ff;
-            box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
-        }
-
-        .chatbot-container textarea::placeholder {
-            color: #6e7681;
-        }
-
-        .chatbot-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            align-items: center;
-        }
-
-        .chatbot-actions .btn-analyze {
-            background: #58a6ff;
-            border: none;
-            color: #0d1117;
-            padding: 0.6rem 2rem;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .chatbot-actions .btn-analyze:hover {
-            background: #4a8fd8;
-            transform: scale(1.02);
-        }
-
-        .chatbot-actions .btn-analyze:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .chatbot-actions .btn-clear {
-            background: transparent;
-            border: 1px solid #30363d;
-            color: #8b949e;
-            padding: 0.6rem 1.5rem;
-            border-radius: 30px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .chatbot-actions .btn-clear:hover {
-            border-color: #f85149;
-            color: #f85149;
-        }
-
-        /* ===== ANALYSIS RESULT ===== */
-        .analysis-result {
-            display: none;
-            background: #0d1117;
-            border-radius: 12px;
-            padding: 1.2rem 1.5rem;
-            border: 1px solid #30363d;
-            margin-top: 0.5rem;
-            animation: slideDown 0.4s ease;
-        }
-
-        .analysis-result.active {
-            display: block;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .analysis-result .result-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .analysis-result .result-header h3 {
-            color: #f0e6d0;
-            font-size: 1.1rem;
-        }
-
-        .analysis-result .result-header .badge-ai {
-            background: #1f2937;
-            color: #58a6ff;
-            padding: 0.2rem 1rem;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            border: 1px solid #58a6ff;
-        }
-
-        .analysis-result .result-body {
-            color: #b1bac4;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .analysis-result .result-body strong {
-            color: #f0e6d0;
-        }
-
-        .analysis-result .result-body .skill-tag {
-            display: inline-block;
-            background: #1e2630;
-            color: #58a6ff;
-            padding: 0.15rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            border: 1px solid #30363d;
-            margin: 0.2rem 0.2rem 0 0;
-        }
-
-        .analysis-result .result-body .info-box {
-            background: #1e2630;
-            padding: 0.8rem 1.2rem;
-            border-radius: 8px;
-            margin: 0.8rem 0;
-            border-left: 3px solid #58a6ff;
-        }
-
-        .analysis-result .result-body .info-box.whatsapp-box {
-            border-left-color: #25D366;
-            background: #0d1f1a;
-        }
-
-        .analysis-result .result-body .info-box.whatsapp-box a {
-            color: #25D366;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .analysis-result .result-body .info-box.whatsapp-box a:hover {
-            text-decoration: underline;
-        }
-
-        .analysis-loading {
-            display: none;
-            color: #8b949e;
-            font-size: 0.9rem;
-            padding: 0.5rem 0;
-        }
-
-        .analysis-loading.active {
-            display: block;
-        }
-
-        .analysis-loading .spinner {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid #30363d;
-            border-top-color: #58a6ff;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            vertical-align: middle;
-            margin-right: 8px;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
         }
 
         /* ===== SECTION TITLES ===== */
@@ -422,6 +216,7 @@
             color: #f0e6d0;
         }
 
+        /* ===== ABOUT ===== */
         .about-text {
             color: #b1bac4;
             font-size: 1rem;
@@ -437,6 +232,7 @@
             border: 1px solid #30363d;
             border-left-width: 6px;
         }
+
         .highlight-box.blue {
             border-left-color: #58a6ff;
             background: #132030;
@@ -460,6 +256,7 @@
             gap: 0.6rem;
             list-style: none;
         }
+
         .skills-grid li {
             background: #1e2630;
             padding: 0.4rem 1.1rem;
@@ -468,6 +265,7 @@
             font-size: 0.85rem;
             transition: 0.3s;
         }
+
         .skills-grid li:hover {
             border-color: #58a6ff;
             transform: translateY(-2px);
@@ -479,18 +277,21 @@
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.2rem;
         }
+
         .project-card {
             background: #1e2630;
-            padding: 1.2rem;
+            padding: 1.2rem 1.2rem;
             border-radius: 12px;
             border: 1px solid #30363d;
             transition: 0.3s;
         }
+
         .project-card:hover {
             border-color: #58a6ff;
             transform: translateY(-4px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
+
         .project-card h3 {
             color: #f0e6d0;
             font-size: 1.1rem;
@@ -519,6 +320,7 @@
             gap: 0.8rem;
             margin: 1.2rem 0;
         }
+
         .gallery-grid img {
             width: 100%;
             height: 150px;
@@ -527,12 +329,13 @@
             border: 1px solid #30363d;
             transition: 0.3s;
         }
+
         .gallery-grid img:hover {
             border-color: #58a6ff;
             transform: scale(1.02);
         }
 
-        /* ===== FLOATING WHATSAPP ===== */
+        /* ===== WHATSAPP FLOATING BUTTON ===== */
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -552,6 +355,7 @@
             z-index: 999;
             border: none;
         }
+
         .whatsapp-float:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
@@ -566,6 +370,7 @@
             color: #8b949e;
             font-size: 0.85rem;
         }
+
         .footer a {
             color: #58a6ff;
             text-decoration: none;
@@ -580,6 +385,7 @@
             body {
                 padding: 0.6rem;
             }
+
             .top-bar {
                 flex-direction: column;
                 align-items: stretch;
@@ -589,15 +395,18 @@
             .top-bar .right {
                 justify-content: center;
             }
+
             .header h1 {
                 font-size: 2rem;
             }
             .header .tagline {
                 font-size: 0.9rem;
             }
+
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+
             .social-bar {
                 flex-direction: column;
                 align-items: stretch;
@@ -607,36 +416,24 @@
                 padding: 0.5rem;
                 font-size: 0.8rem;
             }
+
             .gallery-grid {
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             }
+
             .gallery-grid img {
                 height: 120px;
             }
+
             .section-title {
                 font-size: 1.3rem;
             }
+
             .highlight-box {
                 padding: 0.8rem 1rem;
                 font-size: 0.9rem;
             }
-            .chatbot-section {
-                padding: 1.2rem;
-            }
-            .chatbot-section h2 {
-                font-size: 1.2rem;
-            }
-            .chatbot-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .chatbot-actions .btn-analyze {
-                width: 100%;
-                justify-content: center;
-            }
-            .analysis-result {
-                padding: 0.8rem 1rem;
-            }
+
             .whatsapp-float {
                 width: 48px;
                 height: 48px;
@@ -650,14 +447,17 @@
             .header h1 {
                 font-size: 1.6rem;
             }
+
             .header .badge {
                 font-size: 0.7rem;
                 padding: 0.2rem 0.8rem;
             }
+
             .skills-grid li {
                 font-size: 0.75rem;
                 padding: 0.3rem 0.8rem;
             }
+
             .project-card {
                 padding: 0.8rem;
             }
@@ -667,12 +467,14 @@
             .project-card p {
                 font-size: 0.8rem;
             }
+
             .gallery-grid {
                 grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             }
             .gallery-grid img {
                 height: 100px;
             }
+
             .whatsapp-float {
                 width: 42px;
                 height: 42px;
@@ -680,12 +482,17 @@
                 bottom: 12px;
                 right: 12px;
             }
-            .chatbot-container textarea {
-                min-height: 80px;
-                font-size: 0.85rem;
+
+            .top-bar .left .logo {
+                font-size: 1rem;
             }
-            .analysis-result .result-body {
-                font-size: 0.85rem;
+            .lang-dropdown {
+                font-size: 0.75rem;
+                padding: 0.2rem 0.6rem;
+            }
+            .admin-btn {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.8rem;
             }
         }
 
@@ -698,9 +505,6 @@
             }
             .container {
                 padding: 0;
-            }
-            .chatbot-section {
-                padding: 0.8rem;
             }
         }
     </style>
@@ -747,40 +551,6 @@
             <a href="https://github.com/tl-star/direct" target="_blank" class="btn btn-repo">📂 Repository</a>
         </div>
 
-        <!-- ============================================================
-        SMART CHATBOT SECTION (NEW)
-        ============================================================ -->
-        <div class="chatbot-section">
-            <h2>🤖 Smart Project Analyzer</h2>
-            <p class="subtitle">Tell me what you need — I'll analyze and provide a complete solution breakdown</p>
-
-            <div class="chatbot-container">
-                <textarea id="userRequirement" placeholder="Example: I need an automated system that reads license plates from security cameras and opens the gate automatically. I want it to log all vehicle entries and exits."></textarea>
-
-                <div class="chatbot-actions">
-                    <button class="btn-analyze" id="analyzeBtn" onclick="analyzeRequirement()">🔍 Analyze My Project</button>
-                    <button class="btn-clear" onclick="clearAll()">✖ Clear</button>
-                </div>
-
-                <div class="analysis-loading" id="loadingIndicator">
-                    <span class="spinner"></span> Analyzing your requirement with AI...
-                </div>
-
-                <div class="analysis-result" id="analysisResult">
-                    <div class="result-header">
-                        <h3>📋 Project Analysis Report</h3>
-                        <span class="badge-ai">🤖 AI Generated</span>
-                    </div>
-                    <div class="result-body" id="resultBody">
-                        <!-- Dynamic content will be inserted here -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============================================================
-        REST OF THE CONTENT
-        ============================================================ -->
         <!-- ===== ABOUT ===== -->
         <h2 class="section-title" id="aboutTitle">About Me</h2>
         <p class="about-text" id="aboutText">
@@ -833,13 +603,13 @@
         <!-- ===== PROJECTS ===== -->
         <h2 class="section-title" id="projectsTitle">Key Projects</h2>
         <div class="projects-grid" id="projectsGrid">
-            <!-- Loaded from data.json -->
+            <!-- Default projects will be loaded from data.json or fallback -->
         </div>
 
         <!-- ===== GALLERY ===== -->
         <h2 class="section-title" id="galleryTitle">📸 Gallery</h2>
         <div class="gallery-grid" id="galleryGrid">
-            <!-- Loaded from data.json -->
+            <!-- Images loaded from data.json -->
         </div>
 
         <!-- ===== WHY ME ===== -->
@@ -866,7 +636,7 @@
     </div>
 
     <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
-    <a href="https://wa.me/923152820296?text=Hi%20Khalid,%20I%20just%20used%20your%20Smart%20Project%20Analyzer%20and%20want%20to%20discuss%20my%20project" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+    <a href="https://wa.me/923152820296" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
         💬
     </a>
 
@@ -875,9 +645,8 @@
     ============================================================ -->
     <script>
         // ============================================================
-        // 1. TRANSLATIONS DICTIONARY (Simplified - keeping the full version)
+        // 1. TRANSLATIONS DICTIONARY
         // ============================================================
-        // Full translations from previous version - keeping it compact here
         const translations = {
             en: {
                 name: "Khalid Muhammad",
@@ -927,14 +696,6 @@
                 footerCopy: "© 2026 خالد محمد • ❤️ کے ساتھ بنایا گیا",
                 galleryTitle: "📸 گیلری"
             },
-            // Adding all other languages similarly (hi, ar, fr, es) - keeping compact
-        };
-
-        // Add remaining languages (hi, ar, fr, es) - simplified for brevity
-        // In production, you would have all 6 languages here
-        // For now, we'll use English as fallback for other languages
-        const langKeys = ['hi', 'ar', 'fr', 'es'];
-        const langData = {
             hi: {
                 name: "खालिद मुहम्मद",
                 tagline: "पायथन डेवलपर · ऑटोमेशन विशेषज्ञ · IoT और AI समाधान",
@@ -942,18 +703,22 @@
                 badge2: "✅ रिमोट कार्य के लिए उपलब्ध",
                 badge3: "🌍 विश्व भर में",
                 aboutTitle: "मेरे बारे में",
-                aboutText: 'मैं एक <strong>पायथन डेवलपर</strong> हूँ...',
+                aboutText: 'मैं एक <strong>पायथन डेवलपर</strong> हूँ जिसे <strong>ऑटोमेशन सिस्टम, AI पाइपलाइन और IoT समाधान</strong> बनाने का शौक है। स्मार्ट होम डिवाइस से लेकर एंटरप्राइज़-ग्रेड व्यावसायिक सॉफ्टवेयर तक, मैं स्वच्छ और स्केलेबल कोड के साथ जटिल समस्याओं को हल करने में माहिर हूँ।',
+                helpTitle: "💡 मैं आपके व्यवसाय की कैसे मदद कर सकता हूँ:",
+                helpText: 'मैं <strong>कस्टम ऑटोमेशन सिस्टम</strong> बनाता हूँ जो समय बचाते हैं, त्रुटियाँ कम करते हैं, और आपके व्यवसाय के साथ बढ़ते हैं। <strong>AI पाइपलाइन</strong> से लेकर <strong>IoT समाधान</strong> तक, मैं वास्तविक दुनिया में काम करने वाला कोड प्रदान करता हूँ।',
+                trialTitle: "🎯 निःशुल्क परीक्षण प्रस्ताव:",
+                trialText: 'मैं एक <strong>छोटा सा नमूना कार्य</strong> (उदाहरण: 5 PDF को Excel में बदलना, या एक सरल ऑटोमेशन स्क्रिप्ट बनाना) <strong>पूरी तरह से निःशुल्क</strong> पूरा करूँगा। कोई बाध्यता नहीं। पहले मुझे अपने कौशल साबित करने दें।',
+                instantTitle: "🤖 तत्काल संपर्क:",
+                instantText: 'ऊपर <strong>व्हाट्सएप बटन</strong> पर क्लिक करें और सीधे मुझसे बात करें। यह पेज ऑटोमेशन के साथ बनाया गया है — ठीक उसी तरह जैसे मैं प्रदान करता हूँ।',
                 skillsTitle: "मेरे कौशल",
+                skills: ["पायथन (Django / Flask)", "IoT (Raspberry Pi / Arduino)", "AI / ML (TensorFlow, PyTorch)", "OpenCV / LPR सिस्टम", "REST APIs और माइक्रोसर्विसेज", "Android / iOS ऐप्स", "WhatsApp / Telegram बॉट्स", "वेब स्क्रैपिंग और ऑटोमेशन", "Git और सहयोगी वर्कफ़्लो", "Docker और Deployment", "POS / बायोमेट्रिक / पेरोल", "PDF प्रोसेसिंग पाइपलाइन", "स्मार्ट कॉन्ट्रैक्ट / Web3", "चैटबॉट ट्रेनिंग और NLP", "उर्दू भाषा चैटबॉट"],
                 projectsTitle: "प्रमुख परियोजनाएँ",
                 whyTitle: "मुझे क्यों चुनें?",
                 whyStrong: "✅ फुल-स्टैक समस्या समाधानकर्ता",
+                whyText: 'मैं केवल कोड नहीं लिखता — मैं <strong>संपूर्ण समाधान</strong> बनाता हूँ। चाहे वह हार्डवेयर एकीकरण हो, AI पाइपलाइन, या व्यावसायिक सॉफ्टवेयर, मैं वास्तविक दुनिया में काम करने वाले परिणाम प्रदान करता हूँ।',
+                footerText: '📂 मेरा पूरा पोर्टफोलियो देखें <a href="https://github.com/tl-star/direct" target="_blank">GitHub</a> पर &bull; 📧 <a href="mailto:telelenker@gmail.com">telelenker@gmail.com</a>',
                 footerCopy: "© 2026 खालिद मुहम्मद • ❤️ के साथ बनाया गया",
-                galleryTitle: "📸 गैलरी",
-                helpTitle: "💡 मैं आपके व्यवसाय की कैसे मदद कर सकता हूँ:",
-                trialTitle: "🎯 निःशुल्क परीक्षण प्रस्ताव:",
-                instantTitle: "🤖 तत्काल संपर्क:",
-                skills: ["पायथन (Django / Flask)", "IoT (Raspberry Pi / Arduino)", "AI / ML (TensorFlow, PyTorch)", "OpenCV / LPR सिस्टम", "REST APIs और माइक्रोसर्विसेज", "Android / iOS ऐप्स", "WhatsApp / Telegram बॉट्स", "वेब स्क्रैपिंग और ऑटोमेशन", "Git और सहयोगी वर्कफ़्लो", "Docker और Deployment", "POS / बायोमेट्रिक / पेरोल", "PDF प्रोसेसिंग पाइपलाइन", "स्मार्ट कॉन्ट्रैक्ट / Web3", "चैटबॉट ट्रेनिंग और NLP", "उर्दू भाषा चैटबॉट"],
-                footerText: '📂 मेरा पूरा पोर्टफोलियो देखें <a href="https://github.com/tl-star/direct" target="_blank">GitHub</a> पर &bull; 📧 <a href="mailto:telelenker@gmail.com">telelenker@gmail.com</a>'
+                galleryTitle: "📸 गैलरी"
             },
             ar: {
                 name: "خالد محمد",
@@ -962,15 +727,19 @@
                 badge2: "✅ متاح للعمل عن بعد",
                 badge3: "🌍 في جميع أنحاء العالم",
                 aboutTitle: "عنّي",
-                aboutText: 'أنا <strong>مطور بايثون</strong> شغوف ببناء <strong>أنظمة الأتمتة، خطوط أنابيب الذكاء الاصطناعي، وحلول إنترنت الأشياء</strong>.',
+                aboutText: 'أنا <strong>مطور بايثون</strong> شغوف ببناء <strong>أنظمة الأتمتة، خطوط أنابيب الذكاء الاصطناعي، وحلول إنترنت الأشياء</strong>. من أجهزة المنزل الذكي إلى برامج الأعمال على مستوى المؤسسات، أتميز في حل المشكلات المعقدة باستخدام كود نظيف وقابل للتطوير.',
                 helpTitle: "💡 كيف يمكنني مساعدة عملك:",
+                helpText: 'أقوم ببناء <strong>أنظمة أتمتة مخصصة</strong> توفر الوقت، وتقلل الأخطاء، وتنمو مع عملك. من <strong>خطوط أنابيب الذكاء الاصطناعي</strong> إلى <strong>حلول إنترنت الأشياء</strong>، أقدم كودًا يعمل في العالم الحقيقي.',
                 trialTitle: "🎯 عرض تجريبي مجاني:",
+                trialText: 'سأكمل <strong>مهمة عينة صغيرة</strong> (مثل تحويل 5 ملفات PDF إلى Excel، أو بناء نص برمجي بسيط للأتمتة) <strong>مجانًا تمامًا</strong>. لا يوجد التزام. دعني أثبت مهاراتي أولاً.',
                 instantTitle: "🤖 اتصال فوري:",
+                instantText: 'انقر على <strong>زر واتساب</strong> أعلاه للتحدث معي مباشرةً. تم بناء هذه الصفحة باستخدام الأتمتة — تمامًا مثل الحلول التي أقدمها.',
                 skillsTitle: "مهاراتي",
                 skills: ["بايثون (جانغو / فلاسك)", "إنترنت الأشياء (راسبيري باي / أردوينو)", "الذكاء الاصطناعي / التعلم الآلي (TensorFlow, PyTorch)", "OpenCV / أنظمة LPR", "واجهات برمجة التطبيقات REST والخدمات المصغرة", "تطبيقات أندرويد / iOS", "بوتات واتساب / تيليجرام", "استخراج البيانات والأتمتة", "Git وسير العمل التعاوني", "Docker والنشر", "نظام نقاط البيع / البصمة / كشف الرواتب", "خطوط أنابيب معالجة PDF", "العقود الذكية / Web3", "تدريب الشات بوت وNLP", "شات بوت باللغة الأردية"],
                 projectsTitle: "المشاريع الرئيسية",
                 whyTitle: "لماذا أنا؟",
                 whyStrong: "✅ حل المشكلات الشامل",
+                whyText: 'أنا لا أكتب الكود فقط — بل أقوم ببناء <strong>حلول كاملة</strong>. سواء كان ذلك تكامل الأجهزة، أو خطوط أنابيب الذكاء الاصطناعي، أو برامج الأعمال، أقدم نتائج تعمل في العالم الحقيقي.',
                 footerText: '📂 عرض محفظتي الكاملة على <a href="https://github.com/tl-star/direct" target="_blank">GitHub</a> &bull; 📧 <a href="mailto:telelenker@gmail.com">telelenker@gmail.com</a>',
                 footerCopy: "© 2026 خالد محمد • تم البناء بـ ❤️",
                 galleryTitle: "📸 معرض"
@@ -982,15 +751,19 @@
                 badge2: "✅ Disponible pour le travail à distance",
                 badge3: "🌍 Dans le monde entier",
                 aboutTitle: "À propos de moi",
-                aboutText: 'Je suis un <strong>développeur Python</strong> passionné par la création de <strong>systèmes d\'automatisation, de pipelines d\'IA et de solutions IoT</strong>.',
+                aboutText: 'Je suis un <strong>développeur Python</strong> passionné par la création de <strong>systèmes d\'automatisation, de pipelines d\'IA et de solutions IoT</strong>. Des appareils domestiques intelligents aux logiciels d\'entreprise de qualité, je m\'épanouis dans la résolution de problèmes complexes avec un code propre et évolutif.',
                 helpTitle: "💡 Comment puis-je aider votre entreprise :",
+                helpText: 'Je crée des <strong>systèmes d\'automatisation personnalisés</strong> qui font gagner du temps, réduisent les erreurs et évoluent avec votre entreprise. Des <strong>pipelines d\'IA</strong> aux <strong>solutions IoT</strong>, je livre du code qui fonctionne dans le monde réel.',
                 trialTitle: "🎯 Offre d'essai gratuit :",
+                trialText: 'Je réaliserai une <strong>petite tâche d\'exemple</strong> (par exemple, convertir 5 PDF en Excel, ou créer un script d\'automatisation simple) <strong>complètement gratuitement</strong>. Aucune obligation. Laissez-moi d\'abord prouver mes compétences.',
                 instantTitle: "🤖 Connexion instantanée :",
+                instantText: 'Cliquez sur le <strong>bouton WhatsApp</strong> ci-dessus pour discuter directement avec moi. Cette page est construite avec l\'automatisation — tout comme les solutions que je livre.',
                 skillsTitle: "Compétences clés",
                 skills: ["Python (Django / Flask)", "IoT (Raspberry Pi / Arduino)", "IA / ML (TensorFlow, PyTorch)", "OpenCV / Systèmes LPR", "API REST et microservices", "Applications Android / iOS", "Bots WhatsApp / Telegram", "Web Scraping et automatisation", "Git et flux de travail collaboratifs", "Docker et déploiement", "POS / Biométrique / Paie", "Pipelines de traitement PDF", "Contrats intelligents / Web3", "Formation de chatbot et NLP", "Chatbot en langue ourdoue"],
                 projectsTitle: "Projets clés",
                 whyTitle: "Pourquoi moi ?",
                 whyStrong: "✅ Résolveur de problèmes full-stack",
+                whyText: 'Je ne me contente pas d\'écrire du code — je construis des <strong>solutions complètes</strong>. Qu\'il s\'agisse d\'intégration matérielle, de pipelines d\'IA ou de logiciels d\'entreprise, je fournis des résultats qui fonctionnent dans le monde réel.',
                 footerText: '📂 Voir mon portfolio complet sur <a href="https://github.com/tl-star/direct" target="_blank">GitHub</a> &bull; 📧 <a href="mailto:telelenker@gmail.com">telelenker@gmail.com</a>',
                 footerCopy: "© 2026 Khalid Muhammad • Construit avec ❤️",
                 galleryTitle: "📸 Galerie"
@@ -1002,317 +775,27 @@
                 badge2: "✅ Disponible para trabajo remoto",
                 badge3: "🌍 En todo el mundo",
                 aboutTitle: "Sobre mí",
-                aboutText: 'Soy un <strong>desarrollador Python</strong> apasionado por construir <strong>sistemas de automatización, pipelines de IA y soluciones IoT</strong>.',
+                aboutText: 'Soy un <strong>desarrollador Python</strong> apasionado por construir <strong>sistemas de automatización, pipelines de IA y soluciones IoT</strong>. Desde dispositivos de hogar inteligente hasta software empresarial de grado, prospero resolviendo problemas complejos con código limpio y escalable.',
                 helpTitle: "💡 Cómo puedo ayudar a tu negocio:",
+                helpText: 'Construyo <strong>sistemas de automatización personalizados</strong> que ahorran tiempo, reducen errores y escalan con tu negocio. Desde <strong>pipelines de IA</strong> hasta <strong>soluciones IoT</strong>, entrego código que funciona en el mundo real.',
                 trialTitle: "🎯 Oferta de prueba gratuita:",
+                trialText: 'Completaré una <strong>pequeña tarea de muestra</strong> (por ejemplo, convertir 5 PDF a Excel, o crear un script de automatización simple) <strong>completamente gratis</strong>. Sin compromiso. Déjame demostrar mis habilidades primero.',
                 instantTitle: "🤖 Conexión instantánea:",
+                instantText: 'Haz clic en el <strong>botón de WhatsApp</strong> arriba para chatear directamente conmigo. Esta página está construida con automatización — al igual que las soluciones que entrego.',
                 skillsTitle: "Habilidades principales",
                 skills: ["Python (Django / Flask)", "IoT (Raspberry Pi / Arduino)", "IA / ML (TensorFlow, PyTorch)", "OpenCV / Sistemas LPR", "API REST y microservicios", "Aplicaciones Android / iOS", "Bots de WhatsApp / Telegram", "Web Scraping y automatización", "Git y flujos de trabajo colaborativos", "Docker y despliegue", "POS / Biométrico / Nómina", "Pipelines de procesamiento PDF", "Contratos inteligentes / Web3", "Entrenamiento de chatbots y NLP", "Chatbot en idioma urdu"],
                 projectsTitle: "Proyectos clave",
                 whyTitle: "¿Por qué yo?",
                 whyStrong: "✅ Solucionador de problemas full-stack",
+                whyText: 'No solo escribo código — construyo <strong>soluciones completas</strong>. Ya sea integración de hardware, pipelines de IA o software empresarial, entrego resultados que funcionan en el mundo real.',
                 footerText: '📂 Ver mi portafolio completo en <a href="https://github.com/tl-star/direct" target="_blank">GitHub</a> &bull; 📧 <a href="mailto:telelenker@gmail.com">telelenker@gmail.com</a>',
                 footerCopy: "© 2026 Khalid Muhammad • Construido con ❤️",
                 galleryTitle: "📸 Galería"
             }
         };
 
-        // Merge additional languages
-        Object.keys(langData).forEach(key => {
-            translations[key] = { ...translations.en, ...langData[key] };
-        });
-
         // ============================================================
-        // 2. KNOWLEDGE BASE (What I can do)
-        // ============================================================
-        const mySkills = {
-            technologies: [
-                "Python (Django, Flask, FastAPI)",
-                "IoT (Raspberry Pi, Arduino, NodeMCU, ESP8266)",
-                "AI/ML (TensorFlow, PyTorch, Scikit-learn)",
-                "Computer Vision (OpenCV, LPR Systems)",
-                "Web Development (REST APIs, WebSockets)",
-                "Mobile Apps (Android, iOS)",
-                "Chatbots (WhatsApp, Telegram, Custom)",
-                "Automation (Web Scraping, RPA)",
-                "Smart Contracts (Solidity, Web3, Ethereum)",
-                "NLP (Rasa, Dialogflow, Custom NLP)",
-                "Databases (PostgreSQL, MySQL, SQLite)",
-                "DevOps (Docker, Git, CI/CD)"
-            ],
-            systems: [
-                "License Plate Recognition (LPR) Parking Systems",
-                "Smart Home Automation (IoT)",
-                "Enterprise Resource Planning (ERP) Systems",
-                "Point of Sale (POS) Systems",
-                "Biometric Attendance & Payroll Systems",
-                "Inventory & Warehouse Management",
-                "PDF Processing & Data Extraction Pipelines",
-                "Chatbot Training & Deployment (Multiple Languages)",
-                "Web3 / Blockchain Applications",
-                "Real-time Communication Apps (WebRTC)"
-            ],
-            integrations: [
-                "WhatsApp Business API",
-                "Telegram Bot API",
-                "Email Automation (SMTP)",
-                "Payment Gateways (Stripe, PayPal)",
-                "Cloud Services (AWS, GCP, Azure)",
-                "Social Media APIs (Instagram, Facebook, LinkedIn)"
-            ]
-        };
-
-        // ============================================================
-        // 3. SMART ANALYZER FUNCTION
-        // ============================================================
-        async function analyzeRequirement() {
-            const textarea = document.getElementById('userRequirement');
-            const requirement = textarea.value.trim();
-
-            if (!requirement) {
-                alert('Please describe your project/requirement first.');
-                return;
-            }
-
-            const resultDiv = document.getElementById('analysisResult');
-            const loadingDiv = document.getElementById('loadingIndicator');
-            const bodyDiv = document.getElementById('resultBody');
-            const analyzeBtn = document.getElementById('analyzeBtn');
-
-            // Show loading
-            loadingDiv.classList.add('active');
-            resultDiv.classList.remove('active');
-            analyzeBtn.disabled = true;
-            analyzeBtn.textContent = '⏳ Analyzing...';
-
-            try {
-                // Option 1: Use DeepSeek API (if you have API key)
-                // For now, we'll use a local intelligent analysis
-                const analysis = await localAnalysis(requirement);
-
-                // Display result
-                bodyDiv.innerHTML = analysis;
-                resultDiv.classList.add('active');
-
-            } catch (error) {
-                bodyDiv.innerHTML = `
-                        <p style="color: #f85149;">❌ Error analyzing your requirement. Please try again.</p>
-                        <p style="color: #8b949e; font-size: 0.9rem;">Error: ${error.message}</p>
-                    `;
-                resultDiv.classList.add('active');
-            }
-
-            loadingDiv.classList.remove('active');
-            analyzeBtn.disabled = false;
-            analyzeBtn.textContent = '🔍 Analyze My Project';
-        }
-
-        // ============================================================
-        // 4. LOCAL INTELLIGENT ANALYSIS (No API needed)
-        // ============================================================
-        function localAnalysis(requirement) {
-            const lower = requirement.toLowerCase();
-
-            // Detect keywords
-            const keywords = {
-                lpr: ['license plate', 'lpr', 'plate recognition', 'vehicle entry', 'parking', 'anpr', 'number plate'],
-                iot: ['smart home', 'sensor', 'raspberry pi', 'arduino', 'nodemcu', 'iot', 'temperature', 'humidity',
-                    'relay', 'automation home'
-                ],
-                chatbot: ['chatbot', 'chat bot', 'conversational', 'nlp', 'natural language', 'dialogflow', 'rasa',
-                    'customer support'
-                ],
-                web3: ['smart contract', 'web3', 'blockchain', 'ethereum', 'solidity', 'dapp', 'decentralized'],
-                pos: ['point of sale', 'pos', 'billing', 'invoice', 'payment', 'retail', 'store'],
-                biometric: ['biometric', 'fingerprint', 'attendance', 'payroll', 'employee', 'hr'],
-                inventory: ['inventory', 'warehouse', 'stock', 'management', 'supply chain'],
-                pdf: ['pdf', 'document', 'extract', 'convert', 'excel', 'csv'],
-                whatsapp: ['whatsapp', 'telegram', 'bot', 'message', 'notification', 'alert'],
-                mobile: ['android', 'ios', 'mobile app', 'iphone', 'smartphone', 'react native'],
-                web: ['website', 'web app', 'dashboard', 'admin panel', 'api', 'backend', 'frontend'],
-                ai: ['artificial intelligence', 'machine learning', 'deep learning', 'neural network', 'ai', 'ml', 'nlp',
-                    'train'
-                ],
-                urdu: ['urdu', 'اردو', 'local language', 'pakistan']
-            };
-
-            // Find matched categories
-            const matched = [];
-            for (const [category, words] of Object.entries(keywords)) {
-                for (const word of words) {
-                    if (lower.includes(word)) {
-                        matched.push(category);
-                        break;
-                    }
-                }
-            }
-
-            // If no match, make it generic
-            if (matched.length === 0) matched.push('web');
-
-            // Build the analysis response
-            let html = '<div class="info-box"><strong>📌 Project Type Detected:</strong> ';
-
-            const categoryNames = {
-                lpr: '🚗 LPR / Parking Automation',
-                iot: '🏠 IoT / Smart Home',
-                chatbot: '🤖 Chatbot / NLP System',
-                web3: '⛓️ Web3 / Smart Contracts',
-                pos: '📊 POS / Business Software',
-                biometric: '👤 Biometric / HR System',
-                inventory: '📦 Inventory / Warehouse',
-                pdf: '📄 PDF / Document Processing',
-                whatsapp: '💬 WhatsApp / Telegram Bot',
-                mobile: '📱 Mobile App',
-                web: '🌐 Web Application',
-                ai: '🧠 AI / Machine Learning',
-                urdu: '🇵🇰 Urdu Language Solution'
-            };
-
-            const names = matched.map(m => categoryNames[m] || m).join(', ');
-            html += `<strong>${names}</strong></div>`;
-
-            // Recommended technologies
-            html += `<div class="info-box"><strong>🛠️ Recommended Technologies:</strong><br />`;
-            const techMap = {
-                lpr: ['Python', 'OpenCV', 'TensorFlow', 'YOLO', 'Flask API', 'PostgreSQL'],
-                iot: ['Python', 'Raspberry Pi', 'MQTT', 'Node.js', 'WebSocket', 'React Dashboard'],
-                chatbot: ['Python', 'Rasa/Dialogflow', 'NLP', 'FastAPI', 'PostgreSQL'],
-                web3: ['Solidity', 'Web3.js', 'Ethereum', 'Hardhat', 'React'],
-                pos: ['Python/Django', 'PostgreSQL', 'REST API', 'Stripe', 'React'],
-                biometric: ['Python/Django', 'PostgreSQL', 'ZKTeco SDK', 'React'],
-                inventory: ['Python/Django', 'PostgreSQL', 'REST API', 'React', 'Barcode Scanner'],
-                pdf: ['Python', 'PyPDF2', 'pdfplumber', 'Camelot', 'Pandas'],
-                whatsapp: ['Python', 'WhatsApp Business API', 'Twilio', 'FastAPI'],
-                mobile: ['Flutter/React Native', 'Firebase', 'REST API', 'WebRTC'],
-                web: ['Python/Django/Flask', 'PostgreSQL', 'React/Vue', 'Docker'],
-                ai: ['Python', 'TensorFlow/PyTorch', 'Pandas', 'Flask/FastAPI', 'Jupyter'],
-                urdu: ['Python', 'Urdu NLP (UrduBERT)', 'Rasa', 'Custom Tokenizer', 'FastAPI']
-            };
-
-            // Get unique techs from matched categories
-            const techs = new Set();
-            matched.forEach(m => {
-                if (techMap[m]) techMap[m].forEach(t => techs.add(t));
-            });
-
-            // If generic, add default techs
-            if (techs.size === 0) {
-                techs.add('Python');
-                techs.add('REST API');
-                techs.add('Database');
-                techs.add('Git');
-                techs.add('Docker');
-            }
-
-            html += Array.from(techs).map(t => `<span class="skill-tag">${t}</span>`).join(' ');
-            html += `</div>`;
-
-            // Environment setup
-            html += `<div class="info-box"><strong>🖥️ Environment Setup Required:</strong><br />`;
-
-            const envItems = [];
-            if (techs.has('Python')) envItems.push('Python 3.10+ with pip & virtualenv');
-            if (techs.has('Raspberry Pi')) envItems.push('Raspberry Pi with Raspberry Pi OS');
-            if (techs.has('Arduino')) envItems.push('Arduino IDE + Required Libraries');
-            if (techs.has('Node.js')) envItems.push('Node.js 18+ with npm');
-            if (techs.has('PostgreSQL')) envItems.push('PostgreSQL 15+');
-            if (techs.has('Docker')) envItems.push('Docker & Docker Compose');
-            if (techs.has('React')) envItems.push('Node.js, npm, React CLI');
-            if (techs.has('TensorFlow')) envItems.push('GPU (Optional) for AI training');
-            if (techs.has('Ethereum')) envItems.push('MetaMask, Hardhat, Infura');
-
-            if (envItems.length === 0) envItems.push('Basic Python & Web Development Environment');
-
-            html += envItems.map(e => `<span class="skill-tag" style="color:#f0883e;border-color:#f0883e;">${e}</span>`).join(' ');
-            html += `</div>`;
-
-            // What data/information you need from client
-            html += `<div class="info-box"><strong>📋 What I Need From You:</strong><br />`;
-
-            const dataNeeds = [
-                'Clear project objective & scope',
-                'Budget range & timeline',
-                'Existing systems to integrate with (if any)',
-                'Preferred technologies (if any)',
-                'User roles & permissions (if applicable)'
-            ];
-
-            if (matched.includes('lpr')) dataNeeds.push('Camera specifications & installation location');
-            if (matched.includes('iot')) dataNeeds.push('Sensor types & deployment environment');
-            if (matched.includes('chatbot')) dataNeeds.push('Training dataset or sample conversations');
-            if (matched.includes('web3')) dataNeeds.push('Smart contract use case & tokenomics');
-            if (matched.includes('pdf')) dataNeeds.push('Sample PDF files for testing');
-            if (matched.includes('biometric')) dataNeeds.push('Biometric device model & integration method');
-            if (matched.includes('urdu')) dataNeeds.push('Urdu language corpus or sample responses');
-
-            html += `<ul style="margin:0.5rem 0 0 1.5rem; color:#b1bac4;">`;
-            dataNeeds.forEach(item => {
-                html += `<li>${item}</li>`;
-            });
-            html += `</ul>`;
-            html += `</div>`;
-
-            // Estimated time & cost
-            let complexity = 'Medium';
-            let estimatedHours = 40;
-            let estimatedCost = '$1,000 - $2,500';
-
-            if (matched.includes('web3') || matched.includes('ai')) {
-                complexity = 'High';
-                estimatedHours = 120;
-                estimatedCost = '$3,000 - $8,000';
-            } else if (matched.includes('lpr') || matched.includes('iot')) {
-                complexity = 'High';
-                estimatedHours = 80;
-                estimatedCost = '$2,000 - $5,000';
-            } else if (matched.includes('chatbot') && matched.includes('urdu')) {
-                complexity = 'High';
-                estimatedHours = 100;
-                estimatedCost = '$2,500 - $6,000';
-            } else if (matched.length > 3) {
-                complexity = 'High';
-                estimatedHours = 100;
-                estimatedCost = '$3,000 - $7,000';
-            } else if (matched.length === 1) {
-                complexity = 'Low-Medium';
-                estimatedHours = 20;
-                estimatedCost = '$500 - $1,500';
-            }
-
-            html += `<div class="info-box"><strong>⏱️ Estimated Timeline & Cost:</strong><br />`;
-            html += `<span class="skill-tag" style="color:#f0883e;border-color:#f0883e;">Complexity: ${complexity}</span>`;
-            html += `<span class="skill-tag" style="color:#f0883e;border-color:#f0883e;">Estimated Hours: ${estimatedHours}+</span>`;
-            html += `<span class="skill-tag" style="color:#f0883e;border-color:#f0883e;">Estimated Cost: ${estimatedCost}</span>`;
-            html += `</div>`;
-
-            // WhatsApp contact box
-            html += `<div class="info-box whatsapp-box">`;
-            html += `<strong>💬 Ready to discuss your project in detail?</strong><br />`;
-            html += `Click the WhatsApp button below to connect with me directly. I'll provide a personalized consultation and quote.`;
-            html += `<br /><br />`;
-            html += `<a href="https://wa.me/923152820296?text=Hi%20Khalid,%20I%20just%20used%20your%20Smart%20Project%20Analyzer.%20My%20project%20is%20about%20${encodeURIComponent(matched.join(', '))}%20and%20I%20would%20like%20to%20discuss%20it%20further." target="_blank" style="display:inline-block;background:#25D366;color:#fff;padding:0.5rem 2rem;border-radius:30px;text-decoration:none;font-weight:600;margin-top:0.3rem;">💬 Chat on WhatsApp</a>`;
-            html += `</div>`;
-
-            // Note about AI analysis
-            html += `<p style="color:#6e7681;font-size:0.8rem;margin-top:0.8rem;">🤖 This analysis is generated based on your requirement description. For accurate estimates, please connect via WhatsApp.</p>`;
-
-            return html;
-        }
-
-        // ============================================================
-        // 5. CLEAR FUNCTION
-        // ============================================================
-        function clearAll() {
-            document.getElementById('userRequirement').value = '';
-            document.getElementById('analysisResult').classList.remove('active');
-            document.getElementById('loadingIndicator').classList.remove('active');
-            document.getElementById('analyzeBtn').disabled = false;
-            document.getElementById('analyzeBtn').textContent = '🔍 Analyze My Project';
-        }
-
-        // ============================================================
-        // 6. LOAD DATA FROM data.json
+        // 2. LOAD DATA FROM data.json
         // ============================================================
         const defaultProjects = [{
             title: "🚗 LPR Automated Parking",
@@ -1381,8 +864,7 @@
         function renderGallery(images) {
             const grid = document.getElementById('galleryGrid');
             if (!images || images.length === 0) {
-                grid.innerHTML =
-                '<p style="color: #8b949e; grid-column: 1 / -1; text-align: center;">No images added yet. Use admin panel to add.</p>';
+                grid.innerHTML = '<p style="color: #8b949e; grid-column: 1 / -1; text-align: center;">No images added yet. Use admin panel to add.</p>';
                 return;
             }
             grid.innerHTML = images.map(img => `
@@ -1391,7 +873,7 @@
         }
 
         // ============================================================
-        // 7. LANGUAGE SWITCH
+        // 3. LANGUAGE SWITCH
         // ============================================================
         function setLanguage(lang) {
             const t = translations[lang];
@@ -1414,7 +896,7 @@
 
             const skillsList = document.getElementById('skillsList');
             skillsList.innerHTML = '';
-            (t.skills || []).forEach(skill => {
+            t.skills.forEach(skill => {
                 const li = document.createElement('li');
                 li.textContent = skill;
                 skillsList.appendChild(li);
@@ -1433,7 +915,7 @@
         }
 
         // ============================================================
-        // 8. INIT
+        // 4. INIT
         // ============================================================
         document.addEventListener('DOMContentLoaded', function() {
             loadData();
@@ -1447,31 +929,6 @@
             const savedLang = localStorage.getItem('portfolio_lang') || 'en';
             setLanguage(savedLang);
             dropdown.value = savedLang;
-
-            // Auto-analyze with example text on first visit
-            const hasAnalyzed = sessionStorage.getItem('hasAnalyzed');
-            if (!hasAnalyzed) {
-                const example = "I need a system that detects license plates from security cameras and automatically opens the gate. It should also log all vehicles entering and exiting.";
-                document.getElementById('userRequirement').value = example;
-                // Auto-analyze after 1 second
-                setTimeout(() => {
-                    analyzeRequirement();
-                    sessionStorage.setItem('hasAnalyzed', 'true');
-                }, 1000);
-            }
-        });
-
-        // ============================================================
-        // 9. KEYBOARD SHORTCUT: Ctrl+Enter to analyze
-        // ============================================================
-        document.addEventListener('keydown', function(e) {
-            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-                const textarea = document.getElementById('userRequirement');
-                if (document.activeElement === textarea) {
-                    e.preventDefault();
-                    analyzeRequirement();
-                }
-            }
         });
     </script>
 
