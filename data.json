@@ -30,17 +30,17 @@
     },
     {
       "title": "⛓️ Smart Contracts & Web3",
-      "description": "Decentralized applications using Solidity, Web3.js, and Ethereum. Built secure and transparent smart contracts.",
+      "description": "Decentralized applications using Solidity, Web3.js, and Ethereum. Built secure and transparent smart contracts for real-world use.",
       "tags": ["Solidity", "Web3", "Ethereum"]
     },
     {
       "title": "🧠 Chatbot Training & NLP",
-      "description": "Trained custom AI chatbots using Rasa, Dialogflow, and custom NLP pipelines for business automation.",
+      "description": "Trained custom AI chatbots using Rasa, Dialogflow, and custom NLP pipelines for business automation and customer support.",
       "tags": ["Python", "NLP", "Rasa"]
     },
     {
       "title": "🇵🇰 Urdu Language Chatbot",
-      "description": "Developed a chatbot that understands and responds in Urdu. Built for local businesses and customer support.",
+      "description": "Developed a chatbot that understands and responds in Urdu. Built for local businesses and customer support in Pakistan.",
       "tags": ["Python", "NLP", "Urdu"]
     }
   ]
