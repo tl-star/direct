@@ -13,9 +13,9 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0d1117;
+            background: #151b22;
             color: #c9d1d9;
-            padding: 2rem 1rem;
+            padding: 1.5rem 1rem;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -23,56 +23,49 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 850px;
             width: 100%;
-            background: #161b22;
-            padding: 2.5rem;
+            background: #1e2630;
+            padding: 2rem;
             border-radius: 20px;
             border: 1px solid #30363d;
         }
 
         h1 {
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #f0e6d0;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
-
         .subtitle {
             text-align: center;
             color: #8b949e;
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
         }
 
-        /* Login Form */
         .login-form {
             display: none;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1rem;
         }
-
         .login-form.active {
             display: flex;
         }
-
         .login-form input {
-            padding: 0.8rem 1.2rem;
+            padding: 0.7rem 1rem;
             border-radius: 10px;
             border: 1px solid #30363d;
             background: #0d1117;
             color: #c9d1d9;
-            font-size: 1rem;
+            font-size: 0.95rem;
             outline: none;
-            transition: 0.3s;
         }
-
         .login-form input:focus {
             border-color: #58a6ff;
         }
-
         .login-form button {
-            padding: 0.8rem;
+            padding: 0.7rem;
             border-radius: 10px;
             border: none;
             background: #58a6ff;
@@ -82,77 +75,90 @@
             cursor: pointer;
             transition: 0.3s;
         }
-
         .login-form button:hover {
             background: #4a8fd8;
         }
-
         .login-error {
             color: #f85149;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-align: center;
             display: none;
         }
 
-        /* Admin Panel */
         .admin-panel {
             display: none;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1.5rem;
         }
-
         .admin-panel.active {
             display: flex;
         }
 
         .panel-section {
             background: #0d1117;
-            padding: 1.5rem;
+            padding: 1.2rem 1.5rem;
             border-radius: 12px;
             border: 1px solid #30363d;
         }
-
         .panel-section h2 {
             color: #f0e6d0;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-size: 1.15rem;
+            margin-bottom: 0.8rem;
         }
-
         .panel-section .field {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
-
         .panel-section label {
             display: block;
             color: #8b949e;
-            font-size: 0.9rem;
-            margin-bottom: 0.3rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.2rem;
         }
-
         .panel-section input,
         .panel-section textarea {
             width: 100%;
-            padding: 0.6rem 1rem;
+            padding: 0.5rem 0.8rem;
             border-radius: 8px;
             border: 1px solid #30363d;
-            background: #161b22;
+            background: #1e2630;
             color: #c9d1d9;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             outline: none;
         }
-
         .panel-section input:focus,
         .panel-section textarea:focus {
             border-color: #58a6ff;
         }
-
         .panel-section textarea {
-            min-height: 80px;
+            min-height: 60px;
             resize: vertical;
+        }
+        .panel-section .repo-item {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .panel-section .repo-item input {
+            flex: 1;
+            min-width: 180px;
+        }
+        .panel-section .repo-item .remove-repo {
+            background: #f85149;
+            border: none;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        .panel-section .repo-item .remove-repo:hover {
+            background: #d43a33;
         }
 
         .btn-save {
-            padding: 0.7rem 2rem;
+            padding: 0.6rem 1.8rem;
             border-radius: 10px;
             border: none;
             background: #25D366;
@@ -160,14 +166,44 @@
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
+            font-size: 0.9rem;
         }
-
         .btn-save:hover {
             background: #1ebe5c;
         }
 
+        .btn-add {
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            border: none;
+            background: #58a6ff;
+            color: #0d1117;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.85rem;
+        }
+        .btn-add:hover {
+            background: #4a8fd8;
+        }
+
+        .btn-danger {
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            border: none;
+            background: #f0883e;
+            color: #0d1117;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.85rem;
+        }
+        .btn-danger:hover {
+            background: #d97a33;
+        }
+
         .btn-logout {
-            padding: 0.7rem 2rem;
+            padding: 0.6rem 1.8rem;
             border-radius: 10px;
             border: 1px solid #f85149;
             background: transparent;
@@ -175,27 +211,26 @@
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
+            font-size: 0.9rem;
         }
-
         .btn-logout:hover {
             background: #f85149;
             color: #0d1117;
         }
 
         .status-msg {
-            padding: 0.8rem;
+            padding: 0.6rem;
             border-radius: 8px;
-            margin-top: 1rem;
+            margin-top: 0.8rem;
             display: none;
+            font-size: 0.9rem;
         }
-
         .status-msg.success {
             display: block;
             background: #0d1f1a;
             color: #25D366;
             border: 1px solid #25D366;
         }
-
         .status-msg.error {
             display: block;
             background: #1f0d0d;
@@ -204,53 +239,58 @@
         }
 
         .back-link {
-            display: inline-block;
             color: #58a6ff;
             text-decoration: none;
-            margin-top: 1rem;
+            font-size: 0.9rem;
         }
-
         .back-link:hover {
             color: #f0883e;
         }
 
         .button-group {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             flex-wrap: wrap;
-            margin-top: 1rem;
+            margin-top: 0.8rem;
         }
 
-        /* Gallery */
         .gallery-preview {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 0.8rem;
-            margin: 1rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 0.6rem;
+            margin: 0.8rem 0;
         }
-
         .gallery-preview img {
             width: 100%;
-            height: 100px;
+            height: 80px;
             object-fit: cover;
             border-radius: 8px;
             border: 1px solid #30363d;
         }
-
         .gallery-preview .empty {
             color: #8b949e;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             grid-column: 1 / -1;
             text-align: center;
-            padding: 1rem;
+            padding: 0.5rem;
         }
 
         @media (max-width: 600px) {
             .container {
-                padding: 1.5rem;
+                padding: 1rem;
+            }
+            .panel-section {
+                padding: 0.8rem 1rem;
             }
             .button-group {
                 flex-direction: column;
+            }
+            .repo-item {
+                flex-direction: column;
+                align-items: stretch !important;
+            }
+            .repo-item input {
+                width: 100% !important;
             }
         }
     </style>
@@ -261,7 +301,7 @@
         <h1>⚙️ Admin Panel</h1>
         <p class="subtitle">Manage your portfolio content</p>
 
-        <!-- ===== LOGIN FORM ===== -->
+        <!-- Login Form -->
         <div class="login-form active" id="loginForm">
             <input type="text" id="loginUsername" placeholder="Username" />
             <input type="password" id="loginPassword" placeholder="Password" />
@@ -269,15 +309,25 @@
             <p class="login-error" id="loginError">Invalid username or password</p>
         </div>
 
-        <!-- ===== ADMIN PANEL ===== -->
+        <!-- Admin Panel -->
         <div class="admin-panel" id="adminPanel">
 
             <!-- Social Media Links -->
             <div class="panel-section">
                 <h2>🔗 Social Media Links</h2>
                 <div class="field">
-                    <label>GitHub URL</label>
-                    <input type="url" id="githubUrl" value="https://github.com/tl-star" />
+                    <label>GitHub URLs (Multiple)</label>
+                    <div id="repoList">
+                        <div class="repo-item">
+                            <input type="url" class="repo-input" value="https://github.com/tl-star" />
+                            <button class="remove-repo" onclick="removeRepo(this)">✖</button>
+                        </div>
+                        <div class="repo-item">
+                            <input type="url" class="repo-input" value="https://github.com/tl-star/direct" />
+                            <button class="remove-repo" onclick="removeRepo(this)">✖</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addRepoField()">➕ Add Repository</button>
                 </div>
                 <div class="field">
                     <label>LinkedIn URL</label>
@@ -290,10 +340,6 @@
                 <div class="field">
                     <label>Email</label>
                     <input type="email" id="emailUrl" value="mailto:telelenker@gmail.com" />
-                </div>
-                <div class="field">
-                    <label>Repository URL</label>
-                    <input type="url" id="repoUrl" value="https://github.com/tl-star/direct" />
                 </div>
                 <button class="btn-save" onclick="saveSocialLinks()">💾 Save Social Links</button>
             </div>
@@ -310,7 +356,7 @@
                 </div>
                 <div class="button-group">
                     <button class="btn-save" onclick="addGalleryImage()">➕ Add Image</button>
-                    <button class="btn-save" style="background:#f0883e;" onclick="removeLastImage()">✖️ Remove Last</button>
+                    <button class="btn-danger" onclick="removeLastImage()">✖️ Remove Last</button>
                 </div>
                 <div id="galleryStatus" class="status-msg"></div>
             </div>
@@ -332,13 +378,13 @@
                 </div>
                 <div class="button-group">
                     <button class="btn-save" onclick="addProject()">➕ Add Project</button>
-                    <button class="btn-save" style="background:#f0883e;" onclick="clearProjects()">🗑️ Clear All</button>
+                    <button class="btn-danger" onclick="clearProjects()">🗑️ Clear All</button>
                 </div>
                 <div id="projectStatus" class="status-msg"></div>
             </div>
 
             <!-- Logout -->
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
                 <a href="https://tl-star.github.io/direct/" class="back-link">← Back to Portfolio</a>
                 <button class="btn-logout" onclick="handleLogout()">🚪 Logout</button>
             </div>
@@ -347,194 +393,173 @@
     </div>
 
     <script>
-        // ============================================================
-        // CONFIG
-        // ============================================================
         const ADMIN_USERNAME = 'kgf292900';
         const ADMIN_PASSWORD = 'kgf292900';
 
-        let isLoggedIn = false;
         let galleryImages = [];
         let projects = [];
 
-        // ============================================================
-        // LOGIN
-        // ============================================================
         function handleLogin() {
-            const username = document.getElementById('loginUsername').value;
-            const password = document.getElementById('loginPassword').value;
-            const errorEl = document.getElementById('loginError');
-
-            if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-                isLoggedIn = true;
-                errorEl.style.display = 'none';
+            const u = document.getElementById('loginUsername').value;
+            const p = document.getElementById('loginPassword').value;
+            if (u === ADMIN_USERNAME && p === ADMIN_PASSWORD) {
+                document.getElementById('loginError').style.display = 'none';
                 document.getElementById('loginForm').classList.remove('active');
                 document.getElementById('adminPanel').classList.add('active');
                 loadAdminData();
             } else {
-                errorEl.style.display = 'block';
+                document.getElementById('loginError').style.display = 'block';
             }
         }
 
         function handleLogout() {
-            isLoggedIn = false;
             document.getElementById('adminPanel').classList.remove('active');
             document.getElementById('loginForm').classList.add('active');
             document.getElementById('loginUsername').value = '';
             document.getElementById('loginPassword').value = '';
         }
 
-        // ============================================================
-        // LOAD DATA
-        // ============================================================
         async function loadAdminData() {
             try {
-                const response = await fetch('data.json');
-                if (response.ok) {
-                    const data = await response.json();
-                    galleryImages = data.gallery || [];
-                    projects = data.projects || [];
+                const r = await fetch('data.json');
+                if (r.ok) {
+                    const d = await r.json();
+                    galleryImages = d.gallery || [];
+                    projects = d.projects || [];
                     renderGalleryPreview();
                 }
-            } catch (e) {
-                // Use defaults
-                galleryImages = [];
+            } catch (e) { galleryImages = [];
                 projects = [];
-                renderGalleryPreview();
-            }
+                renderGalleryPreview(); }
         }
 
-        // ============================================================
-        // SAVE DATA
-        // ============================================================
-        async function saveData() {
-            const data = {
-                gallery: galleryImages,
-                projects: projects
-            };
-
-            try {
-                const response = await fetch('data.json', {
-                    method: 'PUT',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-                // Note: GitHub Pages doesn't support PUT via fetch directly.
-                // This is a simulation. In production, use a backend API.
-                showStatus('galleryStatus', '✅ Data saved successfully! (Note: GitHub Pages requires a backend for write operations)', 'success');
-            } catch (e) {
-                showStatus('galleryStatus', '❌ Error saving data. Check console for details.', 'error');
-                console.error(e);
-            }
-        }
-
-        // ============================================================
-        // GALLERY
-        // ============================================================
         function renderGalleryPreview() {
-            const container = document.getElementById('galleryPreview');
-            if (galleryImages.length === 0) {
-                container.innerHTML = '<div class="empty">No images added yet</div>';
-                return;
-            }
-            container.innerHTML = galleryImages.map(img => `
-                <img src="${img}" alt="Gallery image" loading="lazy" />
-            `).join('');
+            const c = document.getElementById('galleryPreview');
+            if (galleryImages.length === 0) { c.innerHTML = '<div class="empty">No images added yet</div>'; return; }
+            c.innerHTML = galleryImages.map(img =>
+                `<img src="${img}" alt="Gallery" loading="lazy" onerror="this.src='https://via.placeholder.com/200x150/1e2630/58a6ff?text=Error'" />`
+                ).join('');
         }
 
         function addGalleryImage() {
             const url = document.getElementById('newImageUrl').value.trim();
-            if (!url) {
-                showStatus('galleryStatus', 'Please enter an image URL', 'error');
-                return;
-            }
+            if (!url) { showStatus('galleryStatus', 'Please enter an image URL', 'error'); return; }
             galleryImages.push(url);
             document.getElementById('newImageUrl').value = '';
             renderGalleryPreview();
-            saveData();
-            showStatus('galleryStatus', '✅ Image added successfully!', 'success');
+            showStatus('galleryStatus', '✅ Image added!', 'success');
         }
 
         function removeLastImage() {
-            if (galleryImages.length === 0) {
-                showStatus('galleryStatus', 'No images to remove', 'error');
-                return;
-            }
+            if (galleryImages.length === 0) { showStatus('galleryStatus', 'No images to remove', 'error'); return; }
             galleryImages.pop();
             renderGalleryPreview();
-            saveData();
             showStatus('galleryStatus', '✅ Last image removed', 'success');
         }
 
-        // ============================================================
-        // PROJECTS
-        // ============================================================
+        // ===== REPOSITORY FUNCTIONS =====
+        function addRepoField() {
+            const list = document.getElementById('repoList');
+            const div = document.createElement('div');
+            div.className = 'repo-item';
+            div.innerHTML = `
+                    <input type="url" class="repo-input" value="" placeholder="https://github.com/username/repo" />
+                    <button class="remove-repo" onclick="removeRepo(this)">✖</button>
+                `;
+            list.appendChild(div);
+        }
+
+        function removeRepo(btn) {
+            const list = document.getElementById('repoList');
+            if (list.children.length <= 1) {
+                showStatus('galleryStatus', 'You need at least one repository', 'error');
+                return;
+            }
+            btn.parentElement.remove();
+        }
+
+        function saveSocialLinks() {
+            const repos = [];
+            document.querySelectorAll('.repo-input').forEach(inp => {
+                if (inp.value.trim()) repos.push(inp.value.trim());
+            });
+
+            const linkedin = document.getElementById('linkedinUrl').value;
+            const whatsapp = document.getElementById('whatsappUrl').value;
+            const email = document.getElementById('emailUrl').value;
+
+            // Save to localStorage for now (simulated)
+            const data = {
+                repos: repos,
+                linkedin: linkedin,
+                whatsapp: whatsapp,
+                email: email
+            };
+            localStorage.setItem('socialData', JSON.stringify(data));
+
+            // Also update the main page buttons (simulated)
+            showStatus('galleryStatus', '✅ Social links saved! (Refresh portfolio to see changes)', 'success');
+        }
+
+        // ===== PROJECT FUNCTIONS =====
         function addProject() {
             const title = document.getElementById('projTitle').value.trim();
             const desc = document.getElementById('projDesc').value.trim();
             const tags = document.getElementById('projTags').value.split(',').map(t => t.trim()).filter(t => t);
 
-            if (!title || !desc) {
-                showStatus('projectStatus', 'Please fill in title and description', 'error');
-                return;
-            }
+            if (!title || !desc) { showStatus('projectStatus', 'Please fill title and description', 'error'); return; }
 
             projects.push({ title, description: desc, tags });
             document.getElementById('projTitle').value = '';
             document.getElementById('projDesc').value = '';
             document.getElementById('projTags').value = '';
-            saveData();
-            showStatus('projectStatus', '✅ Project added successfully!', 'success');
+            showStatus('projectStatus', '✅ Project added!', 'success');
         }
 
         function clearProjects() {
-            if (confirm('Are you sure you want to clear all projects?')) {
-                projects = [];
-                saveData();
-                showStatus('projectStatus', '✅ All projects cleared', 'success');
-            }
+            if (confirm('Clear all projects?')) { projects = [];
+                showStatus('projectStatus', '✅ All projects cleared', 'success'); }
         }
 
-        // ============================================================
-        // SOCIAL LINKS
-        // ============================================================
-        function saveSocialLinks() {
-            const github = document.getElementById('githubUrl').value;
-            const linkedin = document.getElementById('linkedinUrl').value;
-            const whatsapp = document.getElementById('whatsappUrl').value;
-            const email = document.getElementById('emailUrl').value;
-            const repo = document.getElementById('repoUrl').value;
-
-            // Update the main page (simulated)
-            showStatus('galleryStatus', '✅ Social links updated! (Refresh portfolio to see changes)', 'success');
-        }
-
-        // ============================================================
-        // UTILITY
-        // ============================================================
-        function showStatus(id, message, type) {
+        function showStatus(id, msg, type) {
             const el = document.getElementById(id);
-            el.textContent = message;
+            el.textContent = msg;
             el.className = 'status-msg ' + type;
-            setTimeout(() => {
-                el.className = 'status-msg';
-            }, 5000);
+            setTimeout(() => { el.className = 'status-msg'; }, 4000);
         }
 
-        // Enter key support for login
+        // Enter key support
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
-                const loginForm = document.getElementById('loginForm');
-                if (loginForm.classList.contains('active')) {
-                    handleLogin();
-                }
+                const form = document.getElementById('loginForm');
+                if (form.classList.contains('active')) handleLogin();
             }
         });
 
-        // Load on page load
         document.addEventListener('DOMContentLoaded', function() {
-            // Check if already logged in via session (simulated)
-            // For security, we keep login required each time
+            // Load saved repos from localStorage if exists
+            const saved = localStorage.getItem('socialData');
+            if (saved) {
+                try {
+                    const d = JSON.parse(saved);
+                    if (d.repos && d.repos.length > 0) {
+                        const list = document.getElementById('repoList');
+                        list.innerHTML = '';
+                        d.repos.forEach((url, i) => {
+                            const div = document.createElement('div');
+                            div.className = 'repo-item';
+                            div.innerHTML = `
+                                    <input type="url" class="repo-input" value="${url}" />
+                                    <button class="remove-repo" onclick="removeRepo(this)">✖</button>
+                                `;
+                            list.appendChild(div);
+                        });
+                    }
+                    if (d.linkedin) document.getElementById('linkedinUrl').value = d.linkedin;
+                    if (d.whatsapp) document.getElementById('whatsappUrl').value = d.whatsapp;
+                    if (d.email) document.getElementById('emailUrl').value = d.email;
+                } catch (e) {}
+            }
         });
     </script>
 
